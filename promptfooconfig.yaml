@@ -1,12 +1,12 @@
 description: '商品コピーライティング検証'
 
 prompts:
-  # - prompts/template_1.txt
-  # - prompts/template_2.txt
-  # 以下の呼び出し方も可能です（ファイルがあれば）
+  - prompts/template_1.txt
+  - prompts/template_2.txt
+  # 以下の呼び出し方も可能です
   # - prompts/*.json
   # - prompts/*.js
-  - prompts/*.py
+  # - prompts/*.py
 
 providers: 
   - openai:gpt-3.5-turbo-0613
