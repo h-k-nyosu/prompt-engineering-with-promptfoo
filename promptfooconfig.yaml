@@ -1,0 +1,61 @@
+description: '商品コピーライティング検証'
+
+prompts:
+  # - prompts/template_1.txt
+  # - prompts/template_2.txt
+  # 以下の呼び出し方も可能です（ファイルがあれば）
+  # - prompts/*.json
+  # - prompts/*.js
+  - prompts/*.py
+
+providers: 
+  - openai:gpt-3.5-turbo-0613
+  # 異なる temperature での実行結果を比較することも可能です
+  #     id: openai-gpt-3.5-turbo-lowtemp
+  #     config:
+  #       temperature: 0.2
+  # - openai:gpt-3.5-turbo-0613
+  #     id: openai-gpt-3.5-turbo-hightemp
+  #     config:
+  #       temperature: 0.8
+
+tests:
+  - vars:
+      product_title: ミライ空気清浄機
+      product_description: 最先端AIを搭載し、あなたの生活スタイルに合わせて自動で空気を綺麗にする画期的な空気清浄機。
+  - vars:
+      product_title: 無重力マットレス
+      product_description: 宇宙技術を応用した特殊素材で体圧を均等に分散し、まるで宇宙にいるかのような快適な睡眠を提供します。
+    # assert:
+    #   - type: cost
+    #     threshold: 0.0002 # コストが0.0002ドルを超えていないか
+  - vars:
+      product_title: 時を超える腕時計
+      product_description: 伝統的な時計製造技術と最新のスマート機能が融合した、世代を超えて受け継がれる腕時計です。
+    # assert:
+    #   - type: latency
+    #     threshold: 1500 # 推論処理が1500ms秒を超えていないか。ただしキャッシュ利用の場合はエラーになるので`npx promptfoo@latest eval --no-cache`で実行する必要がある
+  - vars:
+      product_title: カイネティックサンド
+      product_description: この手触りが癖になる！色とりどりの砂を使って手軽に形を作れる、子供向けの創造性を刺激するおもちゃ。
+    # assert:
+    #   - type: javascript
+    #     value: 'output.length <= 15' # 生成されたキャッチコピーが15文字を超えていないか
+  - vars:
+      product_title: 無重力ヨガマット
+      product_description: スペーステクノロジーを応用した、浮遊感覚を体験できる革新的なヨガマット。
+    # assert: # 評価方法についてはテンプレートを記述して呼び出すことも可能（下部に記載）
+    #   - $ref: "#/assertionTemplates/costCheck"
+    #   - $ref: "#/assertionTemplates/latencyCheck"
+    #   - $ref: "#/assertionTemplates/lengthCheck"
+
+assertionTemplates:
+  costCheck:
+    type: cost
+    threshold: 0.0002
+  latencyCheck:
+    type: latency
+    threshold: 1500
+  lengthCheck:
+    type: javascript
+    value: 'output.length <= 15'
