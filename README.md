@@ -38,27 +38,27 @@ npx prompftoo@latest eval
 
 左の二列がテストケースの変数、右二列が生成結果となります。
 
-![eval結果](eval_result_1.png)
+![eval結果](statics/eval_result_1.png)
 
 また出力結果の下部には、どれくらいのトークンを利用したかなどが記載されています。また`Cached`という項目があり、一度実行した内容はキャッシュを用いて出力してくれるのが推しポイントです。
 
-![Alt text](eval_result_2.png)
+![Alt text](statics/eval_result_2.png)
 
 `promptfoo`には、WebUIの機能が備わっています。以下のコマンドを実行すると、先ほど実行した結果をWeb上で確認できます。レイテンシーやコストなども確認できるのはアツいですね。
 
-![Alt text](webui_1.png)
+![Alt text](statics/webui_1.png)
 
 なおこの実行に関するデータは`~/.promptfoo`に格納されており、ローカル環境に留まっています。
 
 左上のドロップダウンから、過去の実験結果も振り返ることができます。
 
-![Alt text](webui_2.png)
+![Alt text](statics/webui_2.png)
 
 上部のPromptsタブからは、プロンプトに対してIDが振られており、そこに紐づく実験結果も確認することができます。これも便利！
 
-![Alt text](webui_3.png)
+![Alt text](statics/webui_3.png)
 
-![Alt text](webui_4.png)
+![Alt text](statics/webui_4.png)
 
 `Pass count`や`Fail count`が書いてありますが、これはテストケースに対して評価設定を追加した場合に、その評価結果が集計されるようになっています。
 
