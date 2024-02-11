@@ -147,4 +147,8 @@ npx promptfoo@latest generate dataset
 ---
 
 
-私はこれでプロンプトの実験管理がしやすくなりました！ぜひ使ってみてください！
+私はこれでプロンプトの実験管理がしやすくなりました！
+
+ぜひ`promptfoo`を使ってみてください！
+
+https://www.promptfoo.dev/docs/intro
