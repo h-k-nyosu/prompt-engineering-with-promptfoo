@@ -44,7 +44,13 @@ npx prompftoo@latest eval
 
 ![Alt text](statics/eval_result_2.png)
 
-`promptfoo`には、WebUIの機能が備わっています。以下のコマンドを実行すると、先ほど実行した結果をWeb上で確認できます。レイテンシーやコストなども確認できるのはアツいですね。
+`promptfoo`には、WebUIの機能が備わっています。以下のコマンドを実行すると、先ほど実行した結果をWeb上で確認できます。
+
+```
+npx promptfoo@latest view
+```
+
+レイテンシーやコストなども確認できるのはアツいですね。
 
 ![Alt text](statics/webui_1.png)
 
